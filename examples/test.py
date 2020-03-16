@@ -1,6 +1,5 @@
 import sys
-sys.path.append('../src')
-import inference.py
+import inference
 
-embs=inference.prepare_embs()
-inference.inference_from_embs(embs)
+embs,sen=inference.prepare_embs()
+inference.inference_from_embs(embs,sen)
