@@ -24,9 +24,9 @@ def sif_embedding(sen ):
     # load sentences
     #x, m, _ = data_io.sentences2idx(sentences, words) # x is the array of word indices, m is the binary mask indicating whether there is a word in that location
     x, m  = data_io.sentences2idx(sentences, words) # x is the array of word indices, m is the binary mask indicating whether there is a word in that location
-    print(x,m)
+    #print(x,m)
     w = data_io.seq2weight(x, m, weight4ind) # get word weights
-    print('word weight:',w)
+    #print('word weight:',w)
     # set parameters
     #params = params.params()
     params = params.params_all()  #name 'params' is not defined
