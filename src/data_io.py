@@ -5,7 +5,10 @@ from __future__ import print_function
 import numpy as np
 import pickle
 import tree
+import jieba
 #from theano import config
+
+
 
 def getWordmap(textfile):
     words={}
@@ -134,6 +137,12 @@ def getDataSim(batch, nout):
     if nout <=0:
         return (scores, g1x, g1mask, g2x, g2mask)
 
+    for i in batch:
+        temp = np.zeros(nout)
+    for i in batch:
+        temp = np.zeros(nout)
+    for i in batch:
+        temp = np.zeros(nout)
     for i in batch:
         temp = np.zeros(nout)
         score = float(i[2])
@@ -277,8 +286,8 @@ def getWordWeight(weightfile, a=1e-3):
         a = 1.0
 
     word2weight = {}
-    with open(weightfile) as f:
-        lines = f.readlines()
+    with open(weightfile,'r',encoding='GB18030') as f:
+        lines = f.readlines() 
     N = 0
     for i in lines:
         i=i.strip()
@@ -379,9 +388,3 @@ def getIDFWeight(wordfile, save_file=''):
     weight4ind = {}
     for i in xrange(len(df)):
         weight4ind[i] = np.log2((dlen+2.0)/(1.0+df[i]))
-    if save_file:
-        pickle.dump(weight4ind, open(save_file, 'w'))
-    return weight4ind
-
-
-#======================
