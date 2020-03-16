@@ -15,7 +15,7 @@ def get_weighted_average(We, x, w):
     emb = np.zeros((n_samples, We.shape[1]))
     for i in range(n_samples):
         emb[i,:] = w[i,:].dot(We[x[i,:],:]) / np.count_nonzero(w[i,:])
-        print(emb)
+        #print(emb)
     return emb
 
 def compute_pc(X,npc=1):
@@ -56,5 +56,5 @@ def SIF_embedding(We, x, w, params):
     emb = get_weighted_average(We, x, w)
     if  params.rmpc > 0:
         emb = remove_pc(emb, params.rmpc)
-        print('after remove_pc, emb:',emb)
+        #print('after remove_pc, emb:',emb)
     return emb
