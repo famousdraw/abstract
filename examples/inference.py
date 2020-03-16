@@ -73,10 +73,10 @@ def inference_from_embs(embs,sen):
     result_rel.sort(key=itemgetter(0))
     #print(result_rel)   
     output=[]
-    print(sentences[:-2])
+    #print(sentences[:-2])
     for i,value in result_rel:
         output.append(sentences[i])
-    print(output)
+    #print(output)
     return rel
 
 def knn_treat(rel):
