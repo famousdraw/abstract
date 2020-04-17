@@ -158,6 +158,6 @@ def inference_after_knn(y_,sen):
     print(sentences[:-2])
     for i,value in result_rel:
         output.append(sentences[i])
-    print(output)
+    print(','.join(output))
 
 
