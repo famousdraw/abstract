@@ -15,4 +15,4 @@ def write_to_file(key):
                 #line=line.replace('\u3000','')
                 outfile.write(line+"\n")
     outfile.flush()
-    outfile.close
+    outfile.close( )
