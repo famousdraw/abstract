@@ -1,18 +1,18 @@
-#inference.py
-import sys
-sys.path.append('../src')
-sys.path.append('../data')
+#import sys
+#sys.path.append('\src')
+#sys.path.append('\data')
+#sys.path.append('\examples')
 import sif_embedding
 import pre_proc
 import numpy as np
 def prepare_embs():
     i=0
     sentences=[]
-    with open ('../data/test_news.txt','r',encoding='utf=8') as input:
+    with open ('data/test_news.txt','r',encoding='utf=8') as input:
         if i ==0:title_article=input.readline()
         new_article=input.read()
     title_article=''.join(pre_proc.token(title_article))
-    print('title_article:',title_article)
+    #print('title_article:',title_article)
     #print(new_article)    
     #body_article=new_article
     #print('body_article:',body_article)
@@ -69,7 +69,7 @@ def inference_from_embs(embs,sen):
         k+=1
         result_rel.append(rel_sorted[i])
 
-    k==0
+    k=0
     result_rel.sort(key=itemgetter(0))
     #print(result_rel)   
     output=[]
@@ -150,14 +150,13 @@ def inference_after_knn(y_,sen):
         if k==40:break
         k+=1
         result_rel.append(rel_sorted[i])
-
-    k==0
+    k=0
     result_rel.sort(key=itemgetter(0))
     #print(result_rel)   
     output=[]
     print(sentences[:-2])
     for i,value in result_rel:
         output.append(sentences[i])
-    print(','.join(output))
+    return('，'.join(output))
 
 

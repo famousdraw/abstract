@@ -6,8 +6,8 @@ def sif_embedding(sen ):
     import params
     import SIF_embedding
     # input
-    wordfile = '../data/dic_files.txt' # word vector file, can be downloaded from GloVe website
-    weightfile = '../data/dic_freq.txt' # each line is a word and its frequency
+    wordfile = 'data/dic_files.txt' # word vector file, can be downloaded from GloVe website
+    weightfile = 'data/dic_freq.txt' # each line is a word and its frequency
     weightpara = 1e-3 # the parameter in the SIF weighting scheme, usually in the range [3e-5, 3e-3]
     rmpc = 1 # number of principal components to remove in SIF weighting scheme
     #sentences = ['这是一个例句', '这是一个更长一些的例句']
